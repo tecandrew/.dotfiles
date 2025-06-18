@@ -31,6 +31,7 @@ brew "wget"
 brew "postgresql@17"
 brew "htop"
 brew "flyctl"
+brew "fnm"
 
 # fonts
 cask "font-maple-mono"

@@ -65,13 +65,6 @@ else
     duti -s dev.zed.Zed public.data all
 fi
 
-echo "-- INFO: Installing nvm"
-if test ! $(which nvm); then
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
-else
-    echo "-- WARN: nvm already installed"
-fi
-
 echo "-- INFO: initializing git-lfs"
 git lfs install
 
