@@ -55,17 +55,17 @@ echo "-- INFO: Installing brew pkgs..."
 brew bundle install --file $DOTFILES/Brewfile
 
 # 'run-once' init cmds
-if $(which duti); then
-    echo "-- INFO: Forcing Zed as default editor"
+echo "-- INFO: Forcing Zed as default editor"
+if test ! $(which duti); then
+    echo "-- WARN: 'duti' not found; Zed not set as default editor for plain files"
+else
     duti -s dev.zed.Zed public.plain-text all
     duti -s dev.zed.Zed public.unix-executable all
     duti -s dev.zed.Zed public.data all
-else
-    echo "-- WARN: 'duti' not found; Zed not set as default editor for plain files"
 fi
 
+echo "-- INFO: Installing nvm"
 if test ! $(which nvm); then
-    echo "-- INFO: Installing nvm"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 else
     echo "-- WARN: nvm already installed"

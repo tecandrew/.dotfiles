@@ -12,6 +12,7 @@ add_to_path "/opt/homebrew/opt/postgresql@17/bin"
 
 # aliases
 alias nvim="vi"
+alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
 alias gl="git log --oneline"
