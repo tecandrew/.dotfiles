@@ -23,6 +23,9 @@ alias k="kubectl"
 alias tf="terraform"
 alias gcl="gitlab-ci-local"
 
+# fnm (faster nvm)
+eval "$(fnm env --use-on-cd --shell zsh)"
+
 # better zsh
 eval "$(starship init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
