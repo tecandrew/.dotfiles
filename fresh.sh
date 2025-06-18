@@ -70,3 +70,6 @@ git lfs install
 
 echo "-- INFO: setting up git/project directory"
 mkdir -p $HOME/xx
+
+echo "-- INFO: setting macOS preferences"
+source $DOTFILES/.macos
