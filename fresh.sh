@@ -24,6 +24,7 @@ use_dotfile() {
 }
 
 # symlinks files to the .dotfiles
+use_dotfile $HOME/.zprofile
 use_dotfile $HOME/.zshrc
 use_dotfile $HOME/.gitconfig
 use_dotfile $HOME/.tmux.conf
