@@ -1,12 +1,14 @@
 # taps
 tap "hashicorp/tap"
 tap "defenseunicorns/tap"
+tap "teamookla/speedtest"
 
 # binaries
 brew "hashicorp/tap/terraform"
 brew "defenseunicorns/tap/uds"
 brew "defenseunicorns/tap/maru"
 brew "defenseunicorns/tap/zarf"
+brew "teamookla/speedtest/speedtest"
 brew "starship"
 brew "jq"
 brew "httpie"
