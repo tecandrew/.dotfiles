@@ -1,4 +1,8 @@
 {
+  "file_types": {
+    "xml": ["*.mobileconfig"],
+    "JSON": ["*.zedconfig"]
+  },
   "vim_mode": true,
   "ui_font_family": "Monaspace Xenon Frozen",
   "buffer_font_family": "IBM Plex Mono",
