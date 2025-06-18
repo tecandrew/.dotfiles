@@ -1,0 +1,29 @@
+[name]
+	name = Andrew Tec
+	email = 21319730+tecandrew@users.noreply.github.com
+
+# 1password
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKdnDqqeAPOY6yGDomtpSl5bYuBarWdWDsP6s2N4c1t
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+
+# git-delta
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+
+[merge]
+    conflictstyle = zdiff3
+
+[push]
+    autoSetupRemote = true
