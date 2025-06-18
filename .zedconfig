@@ -1,19 +1,71 @@
 {
+  "edit_predictions": {
+    "disabled_globs": ["*.md", "*.env"],
+    "mode": "subtle",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "show_edit_predictions": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "openrouter",
+      "model": "google/gemini-2.5-pro"
+    },
+    "version": "2"
+  },
   "file_types": {
     "xml": ["*.mobileconfig"],
     "JSON": ["*.zedconfig"]
   },
   "vim_mode": true,
   "ui_font_family": "Monaspace Xenon Frozen",
-  "buffer_font_family": "IBM Plex Mono",
+  "buffer_font_family": "MonoLisa",
+  "buffer_font_fallbacks": ["Monaspace Argon Frozen", "IBM Plex Mono"],
+  "buffer_font_features": {
+    "ss03": true, // monolisa 'g'
+    "zero": true, // monolisa slashed '0'
+    "ss07": true, // monolisa curly bracket '{}'
+    "ss10": true, // monolisa greater-than >=
+    "ss11": true, // monolisa hexa-dec X '0xf'
+    "ss14": true, // monolisa ampersand '&
+    "ss15": true, // monolisa 'i'
+    "ss16": true // monolisa 'r'
+  },
   "terminal": {
-    "font_family": "Maple Mono"
+    "font_family": "Maple Mono",
+    "font_fallbacks": ["Monaspace Argon Frozen"]
   },
   "ui_font_size": 16,
   "buffer_font_size": 16,
+  "icon_theme": {
+    "mode": "system",
+    "light": "Catppuccin Latte",
+    "dark": "Catppuccin Mocha"
+  },
   "theme": {
     "mode": "system",
     "light": "Alucard (Dracula Light)",
     "dark": "Catppuccin Mocha"
+  },
+  "auto_install_extensions": {
+    // themes
+    "cattpuccin": true,
+    "catppuccin-icons": true,
+    "dracula": true,
+    // languages
+    "html": true,
+    "xml": true,
+    "terraform": true,
+    "pylsp": true,
+    "ruff": true,
+    "dockerfile": true
   }
 }
