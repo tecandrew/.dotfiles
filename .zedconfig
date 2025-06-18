@@ -66,6 +66,8 @@
     "terraform": true,
     "pylsp": true,
     "ruff": true,
-    "dockerfile": true
+    "dockerfile": true,
+    // tools
+    "just": true
   }
 }
