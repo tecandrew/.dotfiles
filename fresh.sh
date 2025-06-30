@@ -31,6 +31,7 @@ use_dotfile $HOME/.tmux.conf
 use_dotfile $HOME/.vimrc
 use_dotfile $HOME/.config/zed/settings.json .zedconfig
 use_dotfile "$HOME/Library/Application Support/com.mitchellh.ghostty/config" .ghosttyconfig
+use_dotfile "$HOME/.config/glab-cli/config.yml" .glab.yml
 
 # Check if Xcode Command Line Tools are installed
 if ! xcode-select -p &>/dev/null; then
