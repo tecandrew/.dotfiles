@@ -10,6 +10,8 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[credential]
+  helper = osxkeychain
 
 # git-delta
 [core]
