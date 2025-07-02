@@ -36,6 +36,8 @@ brew "htop"
 brew "flyctl"
 brew "fnm"
 brew "mactop"
+brew "openjdk"
+brew "openwebstart"
 
 # fonts
 cask "font-maple-mono"

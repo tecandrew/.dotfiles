@@ -31,3 +31,5 @@ eval "$(starship init zsh)"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source $HOME/.env
+source /Users/AndresT/.config/op/plugins.sh
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
