@@ -20,10 +20,11 @@
     "metrics": false
   },
   "agent": {
+    "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
       "provider": "openrouter",
-      "model": "google/gemini-2.5-pro"
+      "model": "anthropic/claude-sonnet-4"
     },
     "version": "2"
   },
@@ -73,6 +74,7 @@
     "pylsp": true,
     "ruff": true,
     "dockerfile": true,
+    "sql": true,
     // tools
     "just": true
   }

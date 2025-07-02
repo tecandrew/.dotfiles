@@ -10,6 +10,12 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[credential]
+  helper = osxkeychain
+
+# personal pref
+[pull]
+	rebase = false
 [push]
     autoSetupRemote = true
 
@@ -28,5 +34,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[pull]
-	rebase = false

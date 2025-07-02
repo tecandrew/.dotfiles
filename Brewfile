@@ -42,6 +42,9 @@ brew "act"
 brew "iperf3"
 brew "nload"
 brew "fastfetch"
+brew "openjdk"
+brew "openwebstart"
+
 
 # fonts
 cask "font-maple-mono"
