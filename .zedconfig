@@ -1,4 +1,10 @@
 {
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware",
+    "active_line_width": 2
+  },
+  "cursor_blink": true,
   "edit_predictions": {
     "disabled_globs": ["*.md", "*.env"],
     "mode": "subtle",
@@ -52,7 +58,7 @@
   },
   "theme": {
     "mode": "system",
-    "light": "Alucard (Dracula Light)",
+    "light": "Dracula Light (Alucard",
     "dark": "Catppuccin Mocha"
   },
   "auto_install_extensions": {

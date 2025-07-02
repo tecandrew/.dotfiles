@@ -10,6 +10,8 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[push]
+    autoSetupRemote = true
 
 # git-delta
 [core]
@@ -20,8 +22,6 @@
     navigate = true  # use n and N to move between diff sections
 [merge]
     conflictstyle = zdiff3
-[push]
-    autoSetupRemote = true
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
