@@ -43,8 +43,6 @@ brew "iperf3"
 brew "nload"
 brew "fastfetch"
 brew "openjdk"
-brew "openwebstart"
-
 
 # fonts
 cask "font-maple-mono"
@@ -55,6 +53,7 @@ cask "font-sf-mono"
 cask "font-cascadia-code-nf"
 
 # apps
+cask "openwebstart"
 cask "zed"
 cask "ollama"
 cask "1password"
