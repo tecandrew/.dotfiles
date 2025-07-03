@@ -1,3 +1,5 @@
+source $HOME/.env
+
 export DOTFILES=$HOME/.dotfiles
 export EDITOR="zed --wait"
 
@@ -38,8 +40,7 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 
 # better zsh
 eval "$(starship init zsh)"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 source $HOME/.env
 source /Users/AndresT/.config/op/plugins.sh
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"

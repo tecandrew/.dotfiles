@@ -42,7 +42,7 @@ brew "act"
 brew "iperf3"
 brew "nload"
 brew "fastfetch"
-brew "openjdk"
+brew "openjdk@11"
 
 # fonts
 cask "font-maple-mono"
