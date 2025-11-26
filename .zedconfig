@@ -1,4 +1,94 @@
 {
+  "buffer_font_weight": 300.0,
+  "buffer_line_height": "standard",
+  "inlay_hints": {
+    "show_background": true,
+    "enabled": true
+  },
+  "project_panel": {
+    "hide_gitignore": false
+  },
+  "audio": {
+    "experimental.rodio_audio": true
+  },
+  "calls": {
+    "mute_on_join": true
+  },
+  "unnecessary_code_fade": 0.5,
+  "tabs": {
+    "file_icons": true
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyrefly", "ruff", "!basedpyright", "!ty"]
+    }
+  },
+  "minimap": {
+    // "show": "auto"
+    "max_width_columns": 80,
+    "current_line_highlight": "all",
+    "thumb_border": "left_open",
+    "thumb": "always",
+    "display_in": "all_editors",
+    "show": "auto"
+  },
+  "show_whitespaces": "selection",
+  "experimental.theme_overrides":
+  {
+    // "panel.sticky_entry.background": "#000000",
+    // "panel.overlay_background": "#ff0000"
+  },
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "schemas": {
+            "https://raw.githubusercontent.com/zarf-dev/zarf/main/zarf.schema.json": "zarf*.yaml",
+            "https://raw.githubusercontent.com/defenseunicorns/maru-runner/refs/heads/main/tasks.schema.json": "tasks.yaml"
+          }
+        }
+      }
+    }
+  },
+  "ssh_connections": [
+    {
+      "host": "ds3",
+      "username": "trabus",
+      "args": [
+        "-A"
+      ],
+      "projects": [
+        {
+          "paths": [
+            "/home/trabus"
+          ]
+        },
+        {
+          "paths": [
+            "/home/trabus/srcc-genai-v2"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "ds4",
+      "username": "andrest",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/andrest"
+          ]
+        },
+        {
+          "paths": [
+            "/home/andrest/shapm/orca"
+          ]
+        }
+      ]
+    }
+  ],
+  "format_on_save": "off",
   "indent_guides": {
     "enabled": true,
     "coloring": "indent_aware",
@@ -7,11 +97,7 @@
   "cursor_blink": true,
   "edit_predictions": {
     "disabled_globs": ["*.md", "*.env"],
-    "mode": "subtle",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null
-    },
+    "mode": "eager",
     "enabled_in_text_threads": false
   },
   "show_edit_predictions": false,
@@ -20,22 +106,27 @@
     "metrics": false
   },
   "agent": {
-    "default_profile": "ask",
+    "always_allow_tool_actions": true,
+    "default_profile": "write",
     "model_parameters": [],
     "default_model": {
       "provider": "openrouter",
-      "model": "anthropic/claude-sonnet-4"
+      "model": "moonshotai/kimi-k2-0905"
     },
-    "version": "2"
+    "play_sound_when_agent_done": true
   },
   "file_types": {
     "xml": ["*.mobileconfig"],
-    "JSON": ["*.zedconfig"]
+    "JSON": ["*.zedconfig", "*.json5"]
+  },
+  "journal": {
+    "path": "/Users/andrest/Library/CloudStorage/OneDrive-TrabusTechnologies/Documents/_notes/zed",
+    "hour_format": "hour24"
   },
   "vim_mode": true,
-  "ui_font_family": "Monaspace Xenon Frozen",
-  "buffer_font_family": "MonoLisa",
-  "buffer_font_fallbacks": ["Monaspace Argon Frozen", "IBM Plex Mono"],
+  "ui_font_family": "GeistMono Nerd Font",
+  "buffer_font_family": "Monaspace Argon Frozen",
+  "buffer_font_fallbacks": ["Monaspace Argon NF", "IBM Plex Mono"],
   "buffer_font_features": {
     "ss03": true, // monolisa 'g'
     "zero": true, // monolisa slashed '0'
@@ -47,11 +138,16 @@
     "ss16": true // monolisa 'r'
   },
   "terminal": {
-    "font_family": "Maple Mono",
-    "font_fallbacks": ["Monaspace Argon Frozen"]
+    "font_features": {
+      "calt": true,
+      "liga": false
+    },
+    "font_size": 14.0,
+    "font_family": "IBM Plex Mono",
+    "font_fallbacks": ["Monaspace Argon NF"]
   },
-  "ui_font_size": 16,
-  "buffer_font_size": 16,
+  "ui_font_size": 15.0,
+  "buffer_font_size": 15.0,
   "icon_theme": {
     "mode": "system",
     "light": "Catppuccin Latte",
@@ -64,7 +160,7 @@
   },
   "auto_install_extensions": {
     // themes
-    "cattpuccin": true,
+    "catppuccin": true,
     "catppuccin-icons": true,
     "dracula": true,
     // languages
@@ -72,10 +168,11 @@
     "xml": true,
     "terraform": true,
     "pylsp": true,
-    "ruff": true,
     "dockerfile": true,
     "sql": true,
+    "toml": true,
     // tools
-    "just": true
+    "just": true,
+    "codebook": true
   }
 }

@@ -1,8 +1,10 @@
-theme = light:catppuccin-latte,dark:catppuccin-mocha
-font-family = "Maple Mono"
+theme = Electron Highlighter
+font-family = "Monaspace Xenon NF"
 font-thicken = true
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-color = #2fde7c
 background-blur = true
 background-opacity = 0.93
+macos-titlebar-style = tabs
+macos-icon = xray

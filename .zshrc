@@ -1,3 +1,7 @@
+#zmodload zsh/zprof
+
+# Add deno completions to search path
+#if [[ ":$FPATH:" != *":/Users/andrest/.zsh/completions:"* ]]; then export FPATH="/Users/andrest/.zsh/completions:$FPATH"; fi
 source $HOME/.env
 
 export DOTFILES=$HOME/.dotfiles
@@ -11,15 +15,19 @@ add_to_path() {
 
 # PATH env
 add_to_path "/opt/homebrew/opt/postgresql@17/bin"
+add_to_path "$HOME/.local/bin"
+add_to_path "/opt/homebrew/opt/openjdk@11/bin"
+add_to_path "$HOME/.opengrep/cli/latest"
 
 # aliases
+alias j="just"
 alias finder="open"
 alias nextdns="sh -c \"\$(curl -s https://nextdns.io/diag)\""
 alias nvim="vi"
 alias gd="git diff"
 alias ga="git add"
 alias gc="git commit"
-alias gl="git log --oneline"
+alias gl="git log --oneline --reverse -10"
 alias gll="git log"
 alias l="ls"
 alias ll="ls -lah"
@@ -41,6 +49,14 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 # better zsh
 eval "$(starship init zsh)"
 
-source $HOME/.env
-source /Users/AndresT/.config/op/plugins.sh
-export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+source $HOME/.config/op/plugins.sh
+. "/Users/andrest/.deno/env"
+
+# bun completions
+#[ -s "/Users/andrest/.bun/_bun" ] && source "/Users/andrest/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+#zprof
