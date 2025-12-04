@@ -18,6 +18,7 @@ add_to_path "/opt/homebrew/opt/postgresql@17/bin"
 add_to_path "$HOME/.local/bin"
 add_to_path "/opt/homebrew/opt/openjdk@11/bin"
 add_to_path "$HOME/.opengrep/cli/latest"
+add_to_path "$HOME/bin"
 
 # aliases
 alias j="just"
