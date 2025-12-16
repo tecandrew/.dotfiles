@@ -129,7 +129,7 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
 # Show the ~/Library folder
-chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
+# chflags nohidden ~/Library && xattr -d com.apple.FinderInfo ~/Library
 
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
@@ -159,18 +159,18 @@ defaults write com.apple.dock autohide -bool true
 # -- Safari & Webkit
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
-defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+# defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # Enable the Develop menu and the Web Inspector in Safari
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+# defaults write com.apple.Safari IncludeDevelopMenu -bool true
+# defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+# defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Warn about fraudulent websites
-defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
+# defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 
 # Update extensions automatically
-defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
+# defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 
 # -- Terminal
 echo "-- INFO: Configuring Terminal"
@@ -205,9 +205,7 @@ for app in "Activity Monitor" \
     "Opera" \
     "Photos" \
     "Safari" \
-    "SystemUIServer" \
-    "Terminal" \
-    "Ghostty"; do
+    "SystemUIServer"; do
     killall "${app}" &> /dev/null
 done
 echo "-- INFO: Done. Note that some of these changes require a logout/restart to take effect."

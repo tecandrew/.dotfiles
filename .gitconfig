@@ -2,7 +2,7 @@
 	name = Andrew Tec
 	email = 21319730+tecandrew@users.noreply.github.com
 
-# 1password
+	# 1password
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKdnDqqeAPOY6yGDomtpSl5bYuBarWdWDsP6s2N4c1t
 [gpg]
 	format = ssh
@@ -12,9 +12,6 @@
 	gpgsign = true
 [credential]
   helper = osxkeychain
-
-[includeIf "gitdir:~/xx/shapm"]
-  path = "~/.dotfiles/trabus/.gitconfig"
 
 # personal pref
 [pull]
@@ -39,5 +36,6 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[maintenance]
-	repo = /Users/andrest/xx/shapm/orca-app
+
+[includeIf "gitdir:~/xx/"]
+    path = "~/.dotfiles/work/.gitconfig"

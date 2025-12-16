@@ -20,4 +20,4 @@ brew "ansible"
 brew "act"
 cask "openwebstart"
 cask "microsoft-edge"
-mas "Windows App", id: 1295203466
+cask "slack"

@@ -51,13 +51,5 @@ eval "$(fnm env --use-on-cd --shell zsh)"
 eval "$(starship init zsh)"
 
 source $HOME/.config/op/plugins.sh
-. "/Users/andrest/.deno/env"
-
-# bun completions
-#[ -s "/Users/andrest/.bun/_bun" ] && source "/Users/andrest/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 #zprof

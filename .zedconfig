@@ -107,11 +107,11 @@
   },
   "agent": {
     "always_allow_tool_actions": true,
-    "default_profile": "write",
+    "default_profile": "ask",
     "model_parameters": [],
     "default_model": {
-      "provider": "openrouter",
-      "model": "moonshotai/kimi-k2-0905"
+      "provider": "ollama",
+      "model": "gpt-oss:20b"
     },
     "play_sound_when_agent_done": true
   },

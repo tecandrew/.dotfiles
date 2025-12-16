@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
 DOTFILES=$HOME/.dotfiles
 use_dotfile() {
     local file_path="$1"
@@ -23,15 +26,58 @@ use_dotfile() {
     fi
 }
 
+block_header='[includeIf "gitdir:~/xx/"]'
+block_body='    path = "~/.dotfiles/work/.gitconfig"'
+
+has_git_block() {
+  awk -v header="$block_header" -v body="$block_body" '
+    $0 == header {
+      if ((getline nextline) > 0 && nextline == body) {
+        found=1
+        exit
+      }
+    }
+    END { exit found ? 0 : 1 }
+  ' "$1"
+}
+
+
+add_git_block() {
+  printf '\n%s\n%s\n' "$block_header" "$block_body" >>"$1"
+}
+
+read -r -p "Setup for work? (y/N) " reply
+
+# Check if input starts with y or Y using a regex character class
+if [[ "$reply" =~ ^[Yy] ]]; then
+    work=true
+else
+    work=false
+fi
+
+if [ "$work" = true ]; then
+  echo "-- WARN: setting up for work!"
+fi
+
 # symlinks files to the .dotfiles
 use_dotfile $HOME/.zprofile
 use_dotfile $HOME/.zshrc
 use_dotfile $HOME/.gitconfig
+
+if [ "$work" = true ] && ! has_git_block "$HOME/.gitconfig"; then
+  add_git_block "$HOME/.gitconfig"
+fi
+
 use_dotfile $HOME/.tmux.conf
 use_dotfile $HOME/.vimrc
 use_dotfile $HOME/.config/zed/settings.json .zedconfig
 use_dotfile "$HOME/Library/Application Support/com.mitchellh.ghostty/config" .ghosttyconfig
-use_dotfile "$HOME/.config/glab-cli/config.yml" .glab.yml
+
+if [ "$work" = true ]; then
+  mkdir -p $HOME/.config/glab-cli/
+  touch $HOME/.config/glab-cli/config.yml
+  use_dotfile "$HOME/.config/glab-cli/config.yml" .glab.yml
+fi
 
 # Check if Xcode Command Line Tools are installed
 if ! xcode-select -p &>/dev/null; then
@@ -56,6 +102,13 @@ fi
 echo "-- INFO: Installing brew pkgs..."
 brew bundle install --file $DOTFILES/Brewfile
 
+if [ "$work" == false ]; then
+    brew bundle install --file $DOTFILES/mas.Brewfile
+else
+    echo "-- WARN: Installing work brew pkgs and SKIPPING mac apps"
+    brew bundle install --file $DOTFILES/work/Brewfile
+fi
+
 # 'run-once' init cmds
 echo "-- INFO: Forcing Zed as default editor"
 if test ! $(which duti); then
@@ -69,8 +122,10 @@ fi
 echo "-- INFO: initializing git-lfs"
 git lfs install
 
-echo "-- INFO: setting up git/project directory"
-mkdir -p $HOME/xx
+echo "-- INFO: setting up default files & directories"
+mkdir -p $HOME/xx $HOME/.config/op/
+touch $HOME/.env
+touch $HOME/.config/op/plugins.sh
 
 echo "-- INFO: setting macOS preferences"
 source $DOTFILES/.macos
