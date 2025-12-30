@@ -76,6 +76,7 @@ use_dotfile "$HOME/Library/Application Support/com.mitchellh.ghostty/config" .gh
 if [ "$work" = true ]; then
   mkdir -p $HOME/.config/glab-cli/
   touch $HOME/.config/glab-cli/config.yml
+  chmod 600 $HOME/.config/glab-cli/config.yml
   use_dotfile "$HOME/.config/glab-cli/config.yml" .glab.yml
 fi
 

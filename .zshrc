@@ -20,6 +20,9 @@ add_to_path "/opt/homebrew/opt/openjdk@11/bin"
 add_to_path "$HOME/.opengrep/cli/latest"
 add_to_path "$HOME/bin"
 
+# ssh agent
+export SSH_AUTH_SOCK=$HOME/.ssh/proton-pass-agent.sock
+
 # aliases
 alias j="just"
 alias finder="open"
@@ -47,9 +50,12 @@ alias ghosttic="ghosttic"
 # fnm (faster nvm)
 eval "$(fnm env --use-on-cd --shell zsh)"
 
+export OLLAMA_FLASH_ATTENTION="1"
+export OLLAMA_KV_CACHE_TYPE="q8_0"
+
 # better zsh
 eval "$(starship init zsh)"
 
-source $HOME/.config/op/plugins.sh
+#source $HOME/.config/op/plugins.sh
 
 #zprof

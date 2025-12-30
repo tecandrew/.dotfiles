@@ -1,4 +1,5 @@
 {
+  "base_keymap": "VSCode",
   "buffer_font_weight": 300.0,
   "buffer_line_height": "standard",
   "inlay_hints": {
@@ -20,11 +21,11 @@
   },
   "languages": {
     "Python": {
-      "language_servers": ["pyrefly", "ruff", "!basedpyright", "!ty"]
+      "language_servers": ["!pyrefly", "ruff", "!ty", "basedpyright"]
     }
   },
   "minimap": {
-    // "show": "auto"
+    "show": "auto",
     "max_width_columns": 80,
     "current_line_highlight": "all",
     "thumb_border": "left_open",
@@ -107,11 +108,11 @@
   },
   "agent": {
     "always_allow_tool_actions": true,
-    "default_profile": "ask",
+    "default_profile": "write",
     "model_parameters": [],
     "default_model": {
-      "provider": "ollama",
-      "model": "gpt-oss:20b"
+      "provider": "google",
+      "model": "gemini-3-pro-preview"
     },
     "play_sound_when_agent_done": true
   },

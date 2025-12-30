@@ -6,12 +6,8 @@
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKdnDqqeAPOY6yGDomtpSl5bYuBarWdWDsP6s2N4c1t
 [gpg]
 	format = ssh
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
-[credential]
-  helper = osxkeychain
 
 # personal pref
 [pull]
@@ -39,3 +35,5 @@
 
 [includeIf "gitdir:~/xx/"]
     path = "~/.dotfiles/work/.gitconfig"
+[alias]
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"

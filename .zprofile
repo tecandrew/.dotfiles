@@ -1,6 +1,5 @@
 export HOMEBREW_NO_AUTO_UPDATE=1
 #export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 export COMPOSE_BAKE=true
 # Added by OrbStack: command-line tools and integration
