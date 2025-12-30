@@ -73,13 +73,6 @@ use_dotfile $HOME/.vimrc
 use_dotfile $HOME/.config/zed/settings.json .zedconfig
 use_dotfile "$HOME/Library/Application Support/com.mitchellh.ghostty/config" .ghosttyconfig
 
-if [ "$work" = true ]; then
-  mkdir -p $HOME/.config/glab-cli/
-  touch $HOME/.config/glab-cli/config.yml
-  chmod 600 $HOME/.config/glab-cli/config.yml
-  use_dotfile "$HOME/.config/glab-cli/config.yml" .glab.yml
-fi
-
 # Check if Xcode Command Line Tools are installed
 if ! xcode-select -p &>/dev/null; then
     echo "-- INFO: Xcode Command Line Tools not found. Installing..."
