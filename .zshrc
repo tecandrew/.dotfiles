@@ -2,7 +2,20 @@
 
 # Add deno completions to search path
 #if [[ ":$FPATH:" != *":/Users/andrest/.zsh/completions:"* ]]; then export FPATH="/Users/andrest/.zsh/completions:$FPATH"; fi
+
+# secrets
 source $HOME/.env
+export HISTIGNORE='doppler*'
+
+# claude stuff
+export ENABLE_EXPERIMENTAL_MCP_CLI=1
+
+# opencode stuff
+export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
+export OPENCODE_EXPERIMENTAL_ICON_DISCOVERY=true
+export OPENCODE_EXPERIMENTAL_FILEWATCHER=true
+export OPENCODE_EXPERIMENTAL_OXFMT=true
+export OPENCODE_EXPERIMENTAL_PLAN_MODE=1
 
 export DOTFILES=$HOME/.dotfiles
 export EDITOR="zed --wait"
@@ -19,11 +32,15 @@ add_to_path "$HOME/.local/bin"
 add_to_path "/opt/homebrew/opt/openjdk@11/bin"
 add_to_path "$HOME/.opengrep/cli/latest"
 add_to_path "$HOME/bin"
+add_to_path "$HOME/.bun/bin"
+add_to_path "$HOME/.opencode/bin"
+add_to_path "$HOME/.lmstudio/bin"
 
 # ssh agent
-export SSH_AUTH_SOCK=$HOME/.ssh/proton-pass-agent.sock
+# export SSH_AUTH_SOCK=$HOME/.ssh/proton-pass-agent.sock
 
 # aliases
+alias agent='open -a "Agentastic.dev.app"'
 alias j="just"
 alias finder="open"
 alias nextdns="sh -c \"\$(curl -s https://nextdns.io/diag)\""

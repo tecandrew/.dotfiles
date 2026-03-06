@@ -1,4 +1,4 @@
-theme = Electron Highlighter
+theme = Monokai Pro Light
 font-family = "Monaspace Xenon NF"
 font-thicken = true
 shell-integration-features = no-cursor
@@ -7,4 +7,5 @@ cursor-color = #2fde7c
 background-blur = true
 background-opacity = 0.93
 macos-titlebar-style = tabs
-macos-icon = xray
+macos-icon = glass
+background-blur = 10

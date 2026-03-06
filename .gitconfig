@@ -18,6 +18,7 @@
 # git-delta
 [core]
     pager = delta
+	excludesfile = ~/.gitignore_global
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -37,3 +38,5 @@
     path = "~/.dotfiles/work/.gitconfig"
 [alias]
 	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+[coderabbit]
+	machineId = cli/13797edf83274a0b9cbce61374a01715
