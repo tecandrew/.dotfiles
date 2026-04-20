@@ -1,4 +1,4 @@
-theme = Monokai Pro Light
+theme = light:Dayfox,dark:TokyoNight
 font-family = "Monaspace Xenon NF"
 font-thicken = true
 shell-integration-features = no-cursor

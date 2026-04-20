@@ -7,9 +7,6 @@
 source $HOME/.env
 export HISTIGNORE='doppler*'
 
-# claude stuff
-export ENABLE_EXPERIMENTAL_MCP_CLI=1
-
 # opencode stuff
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=true
 export OPENCODE_EXPERIMENTAL_ICON_DISCOVERY=true
@@ -74,5 +71,9 @@ export OLLAMA_KV_CACHE_TYPE="q8_0"
 eval "$(starship init zsh)"
 
 #source $HOME/.config/op/plugins.sh
+
+
+# Vite+ bin (https://viteplus.dev)
+. "$HOME/.vite-plus/env"
 
 #zprof

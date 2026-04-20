@@ -1,5 +1,5 @@
 [user]
-	name = Andrew Tec
+	name = Andrew
 	email = 21319730+tecandrew@users.noreply.github.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHKdnDqqeAPOY6yGDomtpSl5bYuBarWdWDsP6s2N4c1t
 [gpg]
@@ -28,15 +28,14 @@
 [merge]
     conflictstyle = zdiff3
 
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-
 [includeIf "gitdir:~/xx/"]
     path = "~/.dotfiles/work/.gitconfig"
 [alias]
 	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
 [coderabbit]
 	machineId = cli/13797edf83274a0b9cbce61374a01715
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
