@@ -77,3 +77,11 @@ eval "$(starship init zsh)"
 [ -f "$HOME/.vite-plus/env" ] && . "$HOME/.vite-plus/env"
 
 #zprof
+export PATH="$HOME/.local/bin:$PATH"
+
+# bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

@@ -45,6 +45,8 @@ brew "wget"
 brew "yamllint"
 brew "deno"
 brew "opencode"
+brew "mole"
+brew "rtk"
 
 # fonts
 cask "font-cascadia-code-nf"
