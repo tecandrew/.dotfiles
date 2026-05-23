@@ -1,5 +1,4 @@
 # taps
-tap "defenseunicorns/tap"
 tap "teamookla/speedtest"
 tap "lslqtz/formulae"
 
@@ -47,6 +46,7 @@ brew "deno"
 brew "opencode"
 brew "mole"
 brew "rtk"
+brew "thaw"
 
 # fonts
 cask "font-cascadia-code-nf"
