@@ -1,6 +1,7 @@
 # mac app store
 mas "Xcode", id: 497799835
 mas "Klack", id: 6446206067
+mas "Keeby", id: 6760791739
 mas "Notability", id: 360593530
 
 ## safari extensions
