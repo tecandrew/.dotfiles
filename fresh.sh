@@ -63,6 +63,7 @@ use_dotfile "$HOME/.zshrc"
 use_dotfile "$HOME/.gitconfig"
 use_dotfile "$HOME/.tmux.conf"
 use_dotfile "$HOME/.vimrc"
+use_dotfile "$HOME/.config/nvim/init.vim" init.vim
 use_dotfile "$HOME/.config/zed/settings.json" .zedconfig
 use_dotfile "$HOME/Library/Application Support/com.mitchellh.ghostty/config" .ghosttyconfig
 

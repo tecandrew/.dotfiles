@@ -4,8 +4,10 @@ set nocompatible
 set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
-" Allow cursor keys in insert mode
-set esckeys
+" Allow cursor keys in insert mode (option removed in neovim)
+if !has('nvim')
+	set esckeys
+endif
 " Allow backspace in insert mode
 set backspace=indent,eol,start
 " Optimize for fast terminal connections
@@ -35,8 +37,11 @@ set number
 syntax on
 " Highlight current line
 set cursorline
-" Make tabs as wide as two spaces
-set tabstop=2
+" Tab key inserts 4 spaces; indent is 4 spaces
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
@@ -48,8 +53,8 @@ set ignorecase
 set incsearch
 " Always show status line
 set laststatus=2
-" Enable mouse in all modes
-set mouse=a
+" Disable vim mouse handling so the terminal handles select/copy/paste
+set mouse=
 " Disable error bells
 set noerrorbells
 " Don’t reset cursor to start of line when moving around.

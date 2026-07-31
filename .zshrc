@@ -37,7 +37,6 @@ add_to_path "$HOME/.lmstudio/bin"
 # export SSH_AUTH_SOCK=$HOME/.ssh/proton-pass-agent.sock
 
 # aliases
-alias agent='open -a "Agentastic.dev.app"'
 alias j="just"
 alias finder="open"
 alias nextdns="sh -c \"\$(curl -s https://nextdns.io/diag)\""
@@ -85,3 +84,13 @@ export PATH="$HOME/.local/bin:$PATH"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# >>> railway initialize >>>
+source "$HOME/.railway/env"
+# <<< railway initialize <<<
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/atec/.lmstudio/bin"
+# End of LM Studio CLI section
+
+export PATH="$HOME/.uds/bin:$PATH"
